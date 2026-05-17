@@ -116,7 +116,7 @@ export default function Home() {
   return (
     <>
     <div className="home-no-hexbg" style={{ display: 'none' }} />
-    <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '0 5%', paddingTop: '70px', position: 'relative', overflow: 'hidden', flexWrap: 'wrap', gap: '40px' }}>
+    <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '80px 5% 60px', position: 'relative', overflow: 'hidden', flexWrap: 'wrap', gap: '40px' }}>
       <SEO title="Home" description="Kelvin Maina Mucheru — Full-stack developer in Kenya building fast, modern, and impactful digital experiences." url="/" />
 
       {/* Particle canvas */}
@@ -192,8 +192,7 @@ export default function Home() {
         onMouseLeave={handleAvatarLeave}
         style={{
           position: 'relative', zIndex: 2, flexShrink: 0,
-          width: 'clamp(320px,40vw,520px)',
-          marginLeft: '4%',
+          width: 'clamp(260px,38vw,500px)',
           opacity: entered ? 1 : 0,
           transition: 'opacity 1.2s .6s ease',
         }}
@@ -281,10 +280,19 @@ export default function Home() {
         @keyframes drawLine{to{stroke-dashoffset:0}}
 
         @media (max-width: 900px) {
-          .home-avatar { display: none !important; }
           .home-content { max-width: 100% !important; }
+          .home-avatar {
+            width: 100% !important;
+            max-width: 340px !important;
+            margin: 0 auto !important;
+            position: relative !important;
+            right: auto !important;
+            top: auto !important;
+            transform: none !important;
+          }
         }
         @media (max-width: 480px) {
+          .home-avatar { max-width: 280px !important; }
           .home-stats { gap: 20px !important; }
           .home-btns { flex-direction: column !important; }
           .home-btns button { width: 100% !important; }
