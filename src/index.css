@@ -99,3 +99,98 @@ body {
 }
 
 /* ── Base ── */
+
+/* ============================================
+   RESPONSIVE — MOBILE & TABLET
+   ============================================ */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  /* Home page — stack avatar below text */
+  section > div[style*="flex: 1"] {
+    max-width: 100% !important;
+  }
+
+  /* Project cards — single column */
+  div[style*="minmax(460px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Services grid — single column */
+  div[style*="minmax(300px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Contact grid — single column */
+  div[style*="minmax(340px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About grid — single column */
+  div[style*="minmax(420px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Admin sidebar — hide on mobile */
+  aside[style*="width: 220px"] {
+    display: none !important;
+  }
+
+  /* Admin main — full width */
+  main[style*="marginLeft: 220px"] {
+    margin-left: 0 !important;
+    padding: 24px 16px !important;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  /* Reduce section padding */
+  section {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    padding-top: 100px !important;
+  }
+
+  /* Name/email row in contact form — stack */
+  div[style*="gridTemplateColumns: '1fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Stats row — wrap */
+  div[style*="gap: '40px'"] {
+    gap: 24px !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Process steps — single column */
+  div[style*="minmax(180px"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Buttons — stack on very small screens */
+  div[style*="gap: '16px'"] > button + button {
+    margin-top: 0;
+  }
+
+  /* Blog post cards padding */
+  div[style*="padding: '28px 32px'"] {
+    padding: 20px 16px !important;
+  }
+
+  /* Admin project form grid */
+  div[style*="gridTemplateColumns: '1fr 1fr'"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Large screens (1400px+) */
+@media (min-width: 1400px) {
+  /* Max content width */
+  div[style*="maxWidth: '1100px'"],
+  div[style*="maxWidth: '900px'"],
+  div[style*="maxWidth: '860px'"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}

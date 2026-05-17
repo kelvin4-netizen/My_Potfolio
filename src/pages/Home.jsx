@@ -116,7 +116,7 @@ export default function Home() {
   return (
     <>
     <div className="home-no-hexbg" style={{ display: 'none' }} />
-    <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '0 5%', paddingTop: '70px', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '0 5%', paddingTop: '70px', position: 'relative', overflow: 'hidden', flexWrap: 'wrap', gap: '40px' }}>
       <SEO title="Home" description="Kelvin Maina Mucheru — Full-stack developer in Kenya building fast, modern, and impactful digital experiences." url="/" />
 
       {/* Particle canvas */}
@@ -130,7 +130,7 @@ export default function Home() {
       <GlowOrb style={{ width: '300px', height: '300px', background: 'rgba(6,182,212,.08)', bottom: '0', left: '-80px', animationDelay: '3s', zIndex: 1 }} />
 
       {/* LEFT: Text content */}
-      <div style={{ maxWidth: '600px', position: 'relative', zIndex: 2, flex: 1 }}>
+      <div className="home-content" style={{ maxWidth: '600px', position: 'relative', zIndex: 2, flex: 1 }}>
 
         {/* Available badge */}
         {available && (
@@ -168,7 +168,7 @@ export default function Home() {
         </p>
 
         {/* Buttons */}
-        <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '52px', opacity: entered ? 1 : 0, transform: entered ? 'none' : 'translateY(20px)', transition: 'all .9s .45s cubic-bezier(.16,1,.3,1)' }}>
+        <div className="home-btns" style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginBottom: '52px', opacity: entered ? 1 : 0, transform: entered ? 'none' : 'translateY(20px)', transition: 'all .9s .45s cubic-bezier(.16,1,.3,1)' }}>
           <GlowButton onClick={() => navigate('/projects')}>Explore My Work →</GlowButton>
           <GlowButton variant="ghost" onClick={() => navigate('/contact')}>Get In Touch</GlowButton>
         </div>
@@ -186,6 +186,7 @@ export default function Home() {
 
       {/* RIGHT: Avatar */}
       <div
+        className="home-avatar"
         ref={avatarRef}
         onMouseMove={handleAvatarMove}
         onMouseLeave={handleAvatarLeave}
@@ -278,6 +279,16 @@ export default function Home() {
         @keyframes floatBadge1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         @keyframes floatBadge2{0%,100%{transform:translateY(0) translateX(0)}33%{transform:translateY(-10px) translateX(3px)}66%{transform:translateY(-5px) translateX(-2px)}}
         @keyframes drawLine{to{stroke-dashoffset:0}}
+
+        @media (max-width: 900px) {
+          .home-avatar { display: none !important; }
+          .home-content { max-width: 100% !important; }
+        }
+        @media (max-width: 480px) {
+          .home-stats { gap: 20px !important; }
+          .home-btns { flex-direction: column !important; }
+          .home-btns button { width: 100% !important; }
+        }
       `}</style>
     </section>
     </>
