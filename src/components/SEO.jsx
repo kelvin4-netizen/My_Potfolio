@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 
-const BASE_URL = 'https://kmmucheru.dev' // 🔁 change to your real domain
+const BASE_URL = 'https://my-potfolio-psi-rust.vercel.app'
 
 export default function SEO({
   title,

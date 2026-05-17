@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/*
 
-Sitemap: https://kmmucheru.dev/sitemap.xml
+Sitemap: https://my-potfolio-psi-rust.vercel.app/sitemap.xml
